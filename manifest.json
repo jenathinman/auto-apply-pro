@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "AutoApply Pro",
+  "version": "1.0.0",
+  "description": "Autofill job applications for Tech, Finance, and Healthcare roles.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.linkedin.com/*", "https://*.workday.com/*", "https://*.greenhouse.io/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://*.linkedin.com/*",
+    "https://*.workday.com/*",
+    "https://*.greenhouse.io/*"
+  ]
+}
